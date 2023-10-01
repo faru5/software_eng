@@ -9,12 +9,12 @@ public class payment {
   String transactionID;
   String paymentStatus;
 
-  public Payment(String paymentID, student student, double amount) {
-        this.paymentID = paymentID;
-        this.student = student;
-        this.amount = amount;
-        this.paymentStatus = "Unprocessed";
-    }
+  public payment(String paymentID, student student, double amount) {
+    this.paymentID = paymentID;
+    this.student = student;
+    this.amount = amount;
+    this.paymentStatus = "Unprocessed";
+  }
 
   public double calculateFee() {
     return amount;

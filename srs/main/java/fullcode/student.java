@@ -2,9 +2,9 @@ package srs.main.java.fullcode;
 
 import java.util.ArrayList;
 
-public class student extends User {
+public class student extends user {
   String studentID;
-  ArrayList<Enrollment> EnrolledCourses;
+  public ArrayList<enrollment> EnrolledCourses;
 
   public student(String username, String password, String studentID) {
     super(username, password);
@@ -13,7 +13,7 @@ public class student extends User {
   }
 
   public void requestRefund(Website website, String courseID) {
-    website.createRefundRequest(this.studentID, courseID);
+    website.createRefundRequest(this.studentID, courseID, courseID);
   }
 
   public void enrollCourse() {

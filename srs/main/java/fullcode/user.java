@@ -9,8 +9,9 @@ public abstract class user {
   String dateOfBirth;
   String contactNumber;
   String emergencyContact;
+  public enrollment[] enrollments;
 
-  public User(String username, String password) {
+  public user(String username, String password) {
     this.username = username;
     this.password = password;
   }

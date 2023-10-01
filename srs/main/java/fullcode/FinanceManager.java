@@ -3,6 +3,8 @@ package srs.main.java.fullcode;
 import java.util.ArrayList;
 import java.util.List;
 
+import srs.main.java.fullcode.Manager.Report;
+
 public class FinanceManager extends user {
     List<Report> reports;
 
