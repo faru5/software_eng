@@ -1,8 +1,16 @@
 package srs.main.java;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import srs.main.java.fullcode.Course;
+import srs.main.java.fullcode.FinanceManager;
+import srs.main.java.fullcode.Manager;
+import srs.main.java.fullcode.RefundRequest;
+import srs.main.java.fullcode.Website;
+import srs.main.java.fullcode.enrollment;
+import srs.main.java.fullcode.payment;
 import srs.main.java.fullcode.student;
 
 public class Main {
@@ -10,16 +18,24 @@ public class Main {
     // example objects
     student student = new student("student1", "password", "t1");
     Course course = new Course("c1", LocalDateTime.now().plusDays(2)); // course starts 2 days later
-    Enrollment enrollment = new Enrollment("e1", student, course);
+    enrollment enrollment = new enrollment("e1", student, course);
     student.EnrolledCourses.add(enrollment);
     RefundRequest refundRequest = new RefundRequest("r1", student, enrollment);
     FinanceManager financeManager = new FinanceManager("financeManager1", "password");
-    Payment payment = new Payment("p1", student, 100);
-    Manager manager = new Manager("manager1", "password", "m1");
+    payment payment = new payment("p1", student, 100);
+    Manager manager = new Manager("manager1", "password");
 
     // create a website object and add all the objects
     Website website = new Website();
-    website.enrollments.add(enrollment);
+    class Website {
+      private List<enrollment> enrollments = new ArrayList<>();
+
+      public List<enrollment> getEnrollments() {
+        return enrollments;
+      }
+
+      // rest of the code
+    }
     website.refundRequests.add(refundRequest);
     website.payments.add(payment);
 
@@ -27,7 +43,7 @@ public class Main {
     if (website.authenticate(student, "student1", "password")) {
       website.displayEnrolledCourses();
       website.selectCourse("c1");
-      website.createRefundRequest("t1", "c1");
+      website.createRefundRequest("t1", "c1", null);
       website.displayRefundRequestStatus("r1");
     }
 

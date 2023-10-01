@@ -6,7 +6,7 @@ public class enrollment {
   String enrollmentID;
   student student;
   Course course;
-  Payment payment;
+  payment payment;
   Exam exam;
   float progress;
   LocalDateTime enrolmentDate;
