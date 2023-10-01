@@ -22,6 +22,10 @@ public class Course {
     this.startDate = startDate;
   }
 
+  public class Exam {
+
+  }
+
   public void getCourseDetails() {
   }
 
