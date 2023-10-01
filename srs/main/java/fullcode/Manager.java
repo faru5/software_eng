@@ -27,6 +27,10 @@ public class Manager extends user {
 
     }
 
+    public class FeedbackPoll {
+
+    }
+
     public class Report {
 
     }
