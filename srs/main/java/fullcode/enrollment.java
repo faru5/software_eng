@@ -14,6 +14,7 @@ public class enrollment {
   LocalDateTime enrolmentDate;
   String status;
 
+  // the following are the attributes of the enrollment class
   public enrollment(String enrollmentID, student student, Course course) {
     this.enrollmentID = enrollmentID;
     this.student = student;
@@ -22,6 +23,7 @@ public class enrollment {
     this.status = "Active";
   }
 
+  // this is the constructor of the enrollment class
   public boolean cancelenrollment(String studentID, String courseID) {
     if (this.student.studentID.equals(studentID) && this.course.courseID.equals(courseID)) {
       this.status = "Cancelled";
